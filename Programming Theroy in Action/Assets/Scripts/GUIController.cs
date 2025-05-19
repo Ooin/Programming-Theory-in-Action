@@ -7,22 +7,22 @@ using UnityEngine;
 public class GUIController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI ScoringLabel;
-    private int currentScore;
+    private int _currentScore;
 
     private void Start()
     {
-        currentScore = 0;
+        _currentScore = 0;
         UpdateScoreUI();
     }
 
     public void Score(int i)
     {
-        currentScore += i;
+        _currentScore += i;
         UpdateScoreUI();
     }
 
     private void UpdateScoreUI()
     {
-        ScoringLabel.text = "Score: " + currentScore.ToString();
+        ScoringLabel.text = "Score: " + _currentScore.ToString();
     }
 }
